@@ -1,0 +1,47 @@
+{
+  "athlete_01": {
+    "id": "athlete_01",
+    "name": "Viraj Sharma",
+    "sport": "vertical_jump",
+    "tier": "District",
+    "bpi": 12500,
+    "sessions": 1,
+    "avatar": "VS"
+  },
+  "athlete_02": {
+    "id": "athlete_02",
+    "name": "Priya Desai",
+    "sport": "sprint",
+    "tier": "State",
+    "bpi": 11800,
+    "sessions": 0,
+    "avatar": "PD"
+  },
+  "athlete_03": {
+    "id": "athlete_03",
+    "name": "Rajan Mehta",
+    "sport": "snatch",
+    "tier": "National",
+    "bpi": 14200,
+    "sessions": 0,
+    "avatar": "RM"
+  },
+  "athlete_04": {
+    "id": "athlete_04",
+    "name": "Amita Joshi",
+    "sport": "javelin",
+    "tier": "District",
+    "bpi": 9300,
+    "sessions": 0,
+    "avatar": "AJ"
+  },
+  "athlete_05": {
+    "id": "athlete_05",
+    "name": "Karan Singh",
+    "sport": "cricket_bat",
+    "tier": "Block",
+    "bpi": 8600,
+    "sessions": 0,
+    "avatar": "KS"
+  }
+}

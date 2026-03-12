@@ -297,8 +297,8 @@ class RPPGProcessor:
     # ── Private helpers ────────────────────────────────────────────────────
 
     def _trim_window(self) -> None:
-        """Keep only WINDOW_SEC of data."""
-        while len(self._ts) > 1:
+        """Keep only WINDOW_SEC of data, but guarantee we keep at least MIN_FRAMES."""
+        while len(self._ts) > self.MIN_FRAMES:
             if self._ts[-1] - self._ts[0] <= self.WINDOW_SEC:
                 break
             self._r.popleft()
