@@ -1,0 +1,28 @@
+# ActiveBharat — Python ML Dependencies
+# Install: pip install -r requirements.txt
+
+# Core ML
+mediapipe>=0.10.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# Model Training
+tensorflow>=2.13.0   # For Keras MLP + TFLite export
+scikit-learn>=1.3.0  # RandomForest fallback + preprocessing
+
+# Data Processing
+pandas>=2.0.0
+
+# REST API
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+pydantic>=2.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+httpx>=0.25.0        # Async HTTP client for internal calls
+
+# Phase 2 Kinematics
+scipy>=1.11.0
+websockets>=12.0
