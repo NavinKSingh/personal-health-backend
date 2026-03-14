@@ -162,8 +162,8 @@ if FASTAPI_AVAILABLE:
         _load_db()
         ANALYSIS_QUEUE = asyncio.Queue(maxsize=50)   # drop frames if queue full
         task = asyncio.create_task(analysis_worker())
-        print("[API] ActiveBharat API running → http://localhost:8082")
-        print("[API] Swagger docs → http://localhost:8082/docs")
+        print("[API] ActiveBharat API running -> http://localhost:8082")
+        print("[API] Swagger docs -> http://localhost:8082/docs")
         print("[API] Async analysis worker started")
         yield
         # Shutdown
@@ -639,32 +639,55 @@ if FASTAPI_AVAILABLE:
         ]
         return {"active_sessions": active, "count": len(active)}
 
-    # ── rPPG Heart Rate Endpoints ─────────────────────────────────────────────
+    # ── rPPG Ultra-Low Latency WebSocket (Edge AI Phase 2) ────────────────────
 
-    class RPPGFrameRequest(BaseModel):
-        session_id: str
-        image_b64:  str
-        timestamp:  Optional[float] = None
-
-    @app.post("/rppg/frame", tags=["rPPG"])
-    async def rppg_add_frame(req: RPPGFrameRequest):
-        """Accept one camera frame for rPPG heart rate extraction."""
+    @app.websocket("/rppg/live-stream/{session_id}")
+    async def rppg_live_stream(websocket: WebSocket, session_id: str):
+        """
+        Receives raw R, G, B floats directly from the phone at 30+ FPS over WebSockets.
+        No Base64 decoding, no HTTP lag, no Python image resizing.
+        Returns computed heart rate instantly.
+        """
+        await websocket.accept()
+        print(f"[WS-RPPG] Client connected for heart rate streaming: {session_id[:8]}")
         try:
             from rppg_processor import RPPGProcessor
-        except ImportError:
-            return {"error": "rppg_processor.py not found"}
+            if session_id not in RPPG_STORE:
+                RPPG_STORE[session_id] = RPPGProcessor()
+            proc: RPPGProcessor = RPPG_STORE[session_id]
 
-        sid = req.session_id
-        if sid not in RPPG_STORE:
-            RPPG_STORE[sid] = RPPGProcessor()
+            while True:
+                # Expecting pure numeric payload: {"r": 100.5, "g": 90.2, "b": 110.1, "ts": 170...}
+                data = await websocket.receive_json()
+                
+                # If the phone lost the face, it sends a payload notifying us
+                if data.get("face_found") is False:
+                    # Blast back a "no_face" quality
+                    await websocket.send_json({
+                        "status": "warmup",
+                        "signal_quality": "no_face",
+                        "message": "Center your face",
+                        "bpm": 0, "hrv_ms": 0, "waveform": []
+                    })
+                    continue
 
-        proc: RPPGProcessor = RPPG_STORE[sid]
-        frame_result = proc.add_frame(req.image_b64, req.timestamp)
+                r = data.get("r", 0.0)
+                g = data.get("g", 0.0)
+                b = data.get("b", 0.0)
+                t = data.get("ts", time.time())
 
-        # Always compute — proc.compute() returns cached 'warmup' state fast when < MIN_FRAMES
-        result = proc.compute()
+                # Inject instantly into the CHROM engine
+                proc.add_rgb(r, g, b, t)
 
-        return {"frame": frame_result, "result": result}
+                # Compute and send results back on the exact same ticket
+                result = proc.compute()
+                await websocket.send_json(result)
+
+        except WebSocketDisconnect:
+            print(f"[WS-RPPG] Client disconnected: {session_id[:8]}")
+        except Exception as e:
+            print(f"[WS-RPPG] Error: {e}")
+
 
     @app.get("/rppg/result/{session_id}", tags=["rPPG"])
     async def rppg_get_result(session_id: str):

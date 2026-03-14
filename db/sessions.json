@@ -37,5 +37,179 @@
       },
       "xp_earned": 50
     }
+  },
+  "97257cc5-da35-4360-be30-d631b29e5916": {
+    "session_id": "97257cc5-da35-4360-be30-d631b29e5916",
+    "athlete_id": "web_dashboard",
+    "sport": "vertical_jump",
+    "status": "completed",
+    "started_at": "2026-03-13T12:41:10.730926Z",
+    "ended_at": "2026-03-13T12:41:12.770337Z",
+    "frame_count": 0,
+    "summary": {
+      "session_id": "97257cc5-da35-4360-be30-d631b29e5916",
+      "athlete_id": "web_dashboard",
+      "sport": "vertical_jump",
+      "total_frames": 0,
+      "valid_frames": 0,
+      "avg_form_score": 0,
+      "peak_form_score": 0,
+      "peak_jump_height_cm": 0,
+      "avg_jump_height_cm": 0,
+      "avg_symmetry": 0,
+      "xp_earned": 50,
+      "quality_distribution": {
+        "elite": 0,
+        "good": 0,
+        "average": 0,
+        "poor": 0
+      }
+    }
+  },
+  "TEST-SESSION": {
+    "athlete_id": "test",
+    "sport": "vertical_jump",
+    "status": "active"
+  },
+  "d64ae946-78b6-4194-bd9e-574f60d6ac7b": {
+    "session_id": "d64ae946-78b6-4194-bd9e-574f60d6ac7b",
+    "athlete_id": "athlete_01",
+    "sport": "vertical_jump",
+    "status": "completed",
+    "started_at": "2026-03-13T19:23:40.864627Z",
+    "ended_at": "2026-03-13T19:23:56.622758Z",
+    "frame_count": 1,
+    "summary": {
+      "session_id": "d64ae946-78b6-4194-bd9e-574f60d6ac7b",
+      "athlete_id": "athlete_01",
+      "sport": "vertical_jump",
+      "total_frames": 1,
+      "valid_frames": 0,
+      "duration_seconds": 0,
+      "avg_form_score": 0.0,
+      "peak_form_score": 0,
+      "peak_jump_height_cm": 0,
+      "avg_jump_height_cm": 0.0,
+      "avg_symmetry": 0.0,
+      "quality_distribution": {
+        "elite": 0,
+        "good": 0,
+        "average": 0,
+        "poor": 0
+      },
+      "xp_earned": 50
+    }
+  },
+  "fa10dbb0-0f68-4be5-b3d1-b9f973221533": {
+    "session_id": "fa10dbb0-0f68-4be5-b3d1-b9f973221533",
+    "athlete_id": "web_dashboard",
+    "sport": "vertical_jump",
+    "status": "completed",
+    "started_at": "2026-03-13T19:53:53.194766Z",
+    "ended_at": "2026-03-13T19:53:54.500319Z",
+    "frame_count": 0,
+    "summary": {
+      "session_id": "fa10dbb0-0f68-4be5-b3d1-b9f973221533",
+      "athlete_id": "web_dashboard",
+      "sport": "vertical_jump",
+      "total_frames": 0,
+      "valid_frames": 0,
+      "avg_form_score": 0,
+      "peak_form_score": 0,
+      "peak_jump_height_cm": 0,
+      "avg_jump_height_cm": 0,
+      "avg_symmetry": 0,
+      "xp_earned": 50,
+      "quality_distribution": {
+        "elite": 0,
+        "good": 0,
+        "average": 0,
+        "poor": 0
+      }
+    }
+  },
+  "eb7081a0-f8aa-4cde-89c3-91523696868d": {
+    "session_id": "eb7081a0-f8aa-4cde-89c3-91523696868d",
+    "athlete_id": "web_dashboard",
+    "sport": "vertical_jump",
+    "status": "completed",
+    "started_at": "2026-03-13T19:54:07.619247Z",
+    "ended_at": "2026-03-13T19:54:09.251280Z",
+    "frame_count": 0,
+    "summary": {
+      "session_id": "eb7081a0-f8aa-4cde-89c3-91523696868d",
+      "athlete_id": "web_dashboard",
+      "sport": "vertical_jump",
+      "total_frames": 0,
+      "valid_frames": 0,
+      "avg_form_score": 0,
+      "peak_form_score": 0,
+      "peak_jump_height_cm": 0,
+      "avg_jump_height_cm": 0,
+      "avg_symmetry": 0,
+      "xp_earned": 50,
+      "quality_distribution": {
+        "elite": 0,
+        "good": 0,
+        "average": 0,
+        "poor": 0
+      }
+    }
+  },
+  "37770c48-f5f9-47d3-8bcd-ea01d41e7847": {
+    "session_id": "37770c48-f5f9-47d3-8bcd-ea01d41e7847",
+    "athlete_id": "athlete_01",
+    "sport": "vertical_jump",
+    "status": "completed",
+    "started_at": "2026-03-13T20:55:10.692578Z",
+    "ended_at": "2026-03-13T20:55:13.361411Z",
+    "frame_count": 0,
+    "summary": {
+      "session_id": "37770c48-f5f9-47d3-8bcd-ea01d41e7847",
+      "athlete_id": "athlete_01",
+      "sport": "vertical_jump",
+      "total_frames": 0,
+      "valid_frames": 0,
+      "avg_form_score": 0,
+      "peak_form_score": 0,
+      "peak_jump_height_cm": 0,
+      "avg_jump_height_cm": 0,
+      "avg_symmetry": 0,
+      "xp_earned": 50,
+      "quality_distribution": {
+        "elite": 0,
+        "good": 0,
+        "average": 0,
+        "poor": 0
+      }
+    }
+  },
+  "809b957b-c080-49b0-a5b4-f20e676d1ccd": {
+    "session_id": "809b957b-c080-49b0-a5b4-f20e676d1ccd",
+    "athlete_id": "athlete_01",
+    "sport": "vertical_jump",
+    "status": "completed",
+    "started_at": "2026-03-13T21:04:13.437836Z",
+    "ended_at": "2026-03-13T21:04:17.300469Z",
+    "frame_count": 0,
+    "summary": {
+      "session_id": "809b957b-c080-49b0-a5b4-f20e676d1ccd",
+      "athlete_id": "athlete_01",
+      "sport": "vertical_jump",
+      "total_frames": 0,
+      "valid_frames": 0,
+      "avg_form_score": 0,
+      "peak_form_score": 0,
+      "peak_jump_height_cm": 0,
+      "avg_jump_height_cm": 0,
+      "avg_symmetry": 0,
+      "xp_earned": 50,
+      "quality_distribution": {
+        "elite": 0,
+        "good": 0,
+        "average": 0,
+        "poor": 0
+      }
+    }
   }
 }
